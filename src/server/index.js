@@ -1,26 +1,19 @@
 import 'cross-fetch/polyfill';
-
+import qs from 'qs';
 import express from 'express';
 import logger from 'morgan';
-
+import serialize from 'serialize-javascript';
 import { matchPath } from 'react-router-dom';
 import ReactDOMServer from 'react-dom/server';
 import { AppRegistry } from 'react-native';
 import { getBundles } from 'react-loadable/webpack';
 
-import qs from 'qs';
-import serialize from 'serialize-javascript';
-
+import stats from 'build/react-loadable.json';
+import AppWrapper from 'server/AppWrapper';
 import App from 'app';
 import AppRoutes from 'app/routes';
-
-import configureStore from 'store/configureStore';
+import configureStore from 'app/redux/create';
 import { fetchCounter } from 'api/counter';
-
-// eslint-disable-next-line
-import stats from 'build/react-loadable.json';
-
-import AppWrapper from './AppWrapper';
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 const server = express();

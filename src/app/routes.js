@@ -1,4 +1,4 @@
-import { Home, Counter } from './containers';
+import { Home, Counter } from 'app/containers';
 
 export default [
   {

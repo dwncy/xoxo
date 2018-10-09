@@ -1,10 +1,21 @@
-import {
-  SET_COUNTER,
-  INCREMENT_COUNTER,
-  DECREMENT_COUNTER,
-} from 'constants/counter';
+import { apiUrl } from 'app/utils/url';
 
-import { apiUrl } from 'helpers/url';
+const SET_COUNTER = 'SET_COUNTER';
+const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
+const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
+
+export default function reducer(state = 0, action) {
+  switch (action.type) {
+    case SET_COUNTER:
+      return action.payload;
+    case INCREMENT_COUNTER:
+      return state + 1;
+    case DECREMENT_COUNTER:
+      return state - 1;
+    default:
+      return state;
+  }
+}
 
 export const getCounter = () => async (dispatch) => {
   try {
@@ -46,3 +57,5 @@ export const incrementAsync = (delay = 1000) => (dispatch) => {
     dispatch(increment());
   }, delay);
 };
+
+export const getCounterSelector = (state) => state.counter;

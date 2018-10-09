@@ -42,15 +42,10 @@
       "babel-module": {
         "root": ["./src"],
         "alias": {
-          "react-native": "react-native-web",
           "build": "./build/",
-          "App": "./src/App",
+          "config": "./src/config",
           "api": "./src/App/api",
-          "actions": "./src/App/actions",
-          "components": "./src/App/components",
-          "containers": "./src/App/containers",
-          "reducers": "./src/App/reducers",
-          "store": "./src/App/store"
+          "react-native": "react-native-web"
         }
       }
     }

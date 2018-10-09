@@ -1,21 +1,26 @@
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Counter } from 'components';
-import * as CounterActions from 'actions/counter';
-import { getCounter } from 'selectors/counter';
+import { Counter } from 'app/components';
+import {
+  getCounterSelector,
+  getCounter,
+  increment,
+  incrementIfOdd,
+  incrementAsync,
+  decrement,
+} from 'app/redux/modules/counter';
 
 const CounterWrapped = connect(
   (state) => ({
-    counter: getCounter(state),
+    counter: getCounterSelector(state),
   }),
-  (dispatch) => bindActionCreators(CounterActions, dispatch)
+  { increment, incrementIfOdd, incrementAsync, decrement }
 )(Counter);
 
 CounterWrapped.fetchData = (store) => {
   if (__CLIENT__) return [];
 
   const promises = [];
-  promises.push(store.dispatch(CounterActions.getCounter()));
+  promises.push(store.dispatch(getCounter()));
   return Promise.all(promises);
 };
 

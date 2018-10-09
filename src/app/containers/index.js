@@ -1,2 +1,2 @@
-export { default as Home } from './Home/Loadable';
-export { default as Counter } from './Counter/Loadable';
+export { default as Home } from 'app/containers/Home/Loadable';
+export { default as Counter } from 'app/containers/Counter/Loadable';

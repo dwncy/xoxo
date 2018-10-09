@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'utils/routing';
+import { Link } from 'app/utils/routing';
 
 import { StyleSheet, Text, View } from 'react-native';
 

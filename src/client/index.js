@@ -2,7 +2,7 @@ import 'cross-fetch/polyfill';
 import Loadable from 'react-loadable';
 import { AppRegistry } from 'react-native';
 
-import AppWrapper from './AppWrapper';
+import AppWrapper from 'client/AppWrapper';
 
 window.main = () => {
   Loadable.preloadReady().then(() => {
