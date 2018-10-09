@@ -112,7 +112,7 @@ module.exports = {
     if (!dev) {
       config.plugins = [
         ...config.plugins,
-        new webpack.IgnorePlugin(/^\.\/locale$/, [/moment$/]),
+        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
         new webpack.NoEmitOnErrorsPlugin(),
       ];
     }
