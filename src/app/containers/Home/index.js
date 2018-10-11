@@ -1,14 +1,10 @@
 import React from 'react';
-import { Link } from 'app/utils/routing';
 
 import { StyleSheet, Text, View } from 'react-native';
 
 const Home = () => (
   <View style={styles.box}>
-    <Text style={styles.text}>Hello, world!</Text>
-    <Link to="/counter">
-      <Text>Counter</Text>
-    </Link>
+    <Text style={styles.text}>Hello, worldasd!</Text>
   </View>
 );
 
