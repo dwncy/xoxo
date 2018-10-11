@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 const Home = () => (
   <View style={styles.box}>
-    <Text style={styles.text}>Hello, Home!</Text>
+    <Text style={styles.text}>Hello, Account!</Text>
   </View>
 );
 

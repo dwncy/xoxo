@@ -9,12 +9,19 @@ import { Link } from 'app/utils/routing';
 
 import routes from 'app/routes';
 
+const navItem = {
+  flex: 1,
+  padding: 10,
+  alignItems: 'center',
+};
+
 /* eslint-disable */
 let App = () => (
-  <View style={styles.container}>
+  <View>
     <View style={styles.nav}>
-      <Link to="/"><Text>Home</Text></Link>
-      <Link to="/counter"><Text>counter</Text></Link>
+      <Link to="/" style={navItem} replace><Text>Home</Text></Link>
+      <Link to="/inbox" style={navItem} replace><Text>Inbox</Text></Link>
+      <Link to="/account" style={navItem} replace><Text>Akun</Text></Link>
     </View>
     <Switch>
       {routes.map((route) => (
@@ -29,10 +36,11 @@ if (Platform.OS !== 'web') {
 
   App = () => (
     <BackButton>
-      <View style={styles.container}>
+      <View>
         <View style={styles.nav}>
-          <Link to="/"><Text>Home</Text></Link>
-          <Link to="/counter"><Text>counter</Text></Link>
+          <Link to="/" style={styles.navItem} replace><Text>Home</Text></Link>
+          <Link to="/inbox" style={styles.navItem} replace><Text>Inbox</Text></Link>
+          <Link to="/account" style={styles.navItem} replace><Text>Akun</Text></Link>
         </View>
         <Switch>
           {routes.map((route) => (
@@ -45,14 +53,11 @@ if (Platform.OS !== 'web') {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: 25,
-    padding: 10,
-  },
   nav: {
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
+  navItem,
 });
 
 export default App;

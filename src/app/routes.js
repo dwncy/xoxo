@@ -1,4 +1,4 @@
-import { Home, Counter } from 'app/containers';
+import { Home, Inbox, Account } from 'app/containers';
 
 export default [
   {
@@ -7,7 +7,11 @@ export default [
     exact: true,
   },
   {
-    path: '/counter',
-    component: Counter,
+    path: '/inbox',
+    component: Inbox,
+  },
+  {
+    path: '/account',
+    component: Account,
   },
 ];
